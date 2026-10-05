@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud-Based Bus Tracking System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #eaf3ff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 500px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 12px gray;
+        }
+
+        input, button {
+            width: 90%;
+            padding: 12px;
+            margin: 10px;
+        }
+
+        button {
+            background: #1565c0;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f8e9;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>🚌 Cloud-Based Bus Tracking System</h2>
+
+    <input type="text" id="busNo" placeholder="Enter Bus Number">
+
+    <input type="text" id="location" placeholder="Enter Current Location">
+
+    <input type="text" id="destination" placeholder="Enter Destination">
+
+    <button onclick="trackBus()">Track Bus</button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function trackBus() {
+
+    let busNo = document.getElementById("busNo").value;
+    let location = document.getElementById("location").value;
+    let destination = document.getElementById("destination").value;
+
+    if (busNo == "" || location == "" || destination == "") {
+        alert("Please enter all details");
+        return;
+    }
+
+    document.getElementById("result").innerHTML =
+        "<h3>🚌 Bus Tracking Result</h3>" +
+        "<p><b>Bus Number:</b> " + busNo + "</p>" +
+        "<p><b>Current Location:</b> " + location + "</p>" +
+        "<p><b>Destination:</b> " + destination + "</p>" +
+        "<p><b>Bus Status:</b> <span style='color:green'>ON THE WAY</span></p>" +
+        "<p><b>Tracking:</b> Live Tracking Active</p>";
+
+}
+
+</script>
+
+</body>
+</html>
